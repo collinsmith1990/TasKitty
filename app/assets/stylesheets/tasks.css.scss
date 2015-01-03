@@ -1,0 +1,33 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$inactive-blue: #66CCFF;
+$active-blue:   #478FB2;
+$border-gray:   #E0E0E0;
+$heading-gray:  #C8C8C8;
+$background-blue:        #94DBFF;
+$background-blue-font:   #478FB2;
+$d-background-blue:      #96B2CC;
+
+.pane {
+  height: 37em;
+  overflow-y: auto;
+  background-color: gray;
+  border: 1px solid $border-gray;
+  border-radius: 5px;
+  padding: 0 .75em 0 .75em;
+  font-family: arial;
+  .pane-label {
+    color: $heading-gray;
+  }
+}
+
+.my-task-pane {
+  @extend .pane;
+  background-color: $background-blue;
+  border: 1px solid $d-background-blue;
+  .pane-label {
+    color: $background-blue-font;
+  }
+}

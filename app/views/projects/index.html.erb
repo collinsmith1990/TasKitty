@@ -1,0 +1,18 @@
+<div class="container">
+<div class="row">
+  <div class="col-1-3 project-list">
+    <h2>Projects</h2>
+    <% @projects.each do |project| %>
+      <div class="project">
+        <%= link_to project.title, project_path(project) %></span>
+        <%= link_to "delete", project, method: :delete,
+          data: { confirm: "You sure?" },
+          :class => "delete right" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-1-3">
+    <%= link_to "Create New Project", new_project_path, :class => 'btn-primary' %>
+  </div>
+</div>
+</div>

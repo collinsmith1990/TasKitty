@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-1-3">
+      <h2>My Tasks</h2>
+      <div class="my-task-pane">
+        <% @tasks.each do |task| %>
+          <div class="task"><p><%= task.content %></p></div>
+          <%= link_to "Delete", [task.project, task], method: :delete,
+              data: { confirm: "You sure?" } %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-1-3">
+      <h2>My Tasks</h2>
+      <div class="my-task-pane">
+      </div>
+    </div>
+    <div class="col-1-3">
+      <%= link_to "Create New Task", new_project_task_path(@project),
+          :class => 'btn-primary' %>
+    </div>
+  </div>
+</div>

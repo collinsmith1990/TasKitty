@@ -1,0 +1,9 @@
+<p><%= @project.title %>
+<div class="row">
+  <div class="col-1-3 user-task">
+    <p class="partition-label">My Task</p>
+    <% @tasks.each do |task| %>
+      <div class="task"><p><%= task.content %></p></div>
+    <% end %>
+  </div>
+</div>
