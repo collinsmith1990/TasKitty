@@ -187,3 +187,24 @@ h2 {
     color: #A30000;
   }
 }
+
+.new-task-form {
+  textarea {
+    line-height: 11em;
+    width: 75%;
+    border: 2px solid gray;
+    border-radius: 2px;
+  }
+  input[type=submit] {
+    width: 75.5%;
+    margin-left: 12.5%;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: $inactive-blue;
+    border: 1px solid $inactive-blue;
+    border-bottom: 1px solid $active-blue;
+    border-right: 1px solid $active-blue;
+    border-radius: 2px;
+  }
+}
