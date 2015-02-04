@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-1-3">
+      <div class="project-form">
+        <h2>Sign up</h2>
+        <ul>
+        <%= form_for(@user) do |f| %>
+          <li>
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name, placeholder: "John" %>
+          </li>
+
+          <li>
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name, placeholder: "Smith" %>
+          </li>
+
+          <li>
+            <%= f.label :email %>
+            <%= f.text_field :email, placeholder: "JohnSmith@something.com" %>
+          </li>
+
+          <li>
+            <%= f.label :password %>
+            <%= f.password_field :password, placeholder: "Password" %>
+          </li>
+
+          <li>
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
+          </li>
+
+          <li>
+            <%= f.submit %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

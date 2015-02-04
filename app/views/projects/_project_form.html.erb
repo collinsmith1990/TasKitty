@@ -1,0 +1,17 @@
+<div class="project-form">
+  <h2>Create Project</h2>
+  <ul>
+  <%= form_for(@project) do |f| %>
+    <li>
+      <%= render 'shared/error_messages', object: f.object %>
+    </li>
+    <li>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </li>
+    <li>
+    <%= f.submit "Submit" %>
+    </li>
+  <% end %>
+  <ul>
+</div>

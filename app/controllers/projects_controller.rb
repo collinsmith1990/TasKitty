@@ -1,7 +1,9 @@
 class ProjectsController < ApplicationController
+  before_action :logged_in_user, only: [:index, :show, :new, :create]
 
   def index
-    @projects = Project.all
+    @projects = current_user.projects
+    @project = Project.new
   end
 
   def show
@@ -15,6 +17,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
+    @project.memberships.build(project_id: @project.id, user_id: current_user.id)
     if @project.save
       flash[:success] = "New project created."
       redirect_to projects_path

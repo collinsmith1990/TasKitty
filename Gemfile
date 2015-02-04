@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'faker',                '1.4.2'
+gem 'byebug'
 gem 'rails', '4.1.6'
+gem 'bcrypt',               '3.1.7'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'

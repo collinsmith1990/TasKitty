@@ -1,12 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-1-3">
-      <%= form_for(@project, :html => { :class => "new-task-form" }) do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
-        <%= f.label :title %>
-        <%= f.text_area :title %>
-        <%= f.submit %>
-      <% end %>
+      <div class="project-form">
+        <h2>Create Project</h2>
+        <ul>
+        <%= form_for(@project, :html => { :class => "new-task-form" }) do |f| %>
+          <li>
+            <%= render 'shared/error_messages', object: f.object %>
+          </li>
+          <li>
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+          </li>
+          <%= f.submit "Submit" %>
+        <% end %>
+        <ul>
+      </div>
     </div>
   </div>
 </div>
