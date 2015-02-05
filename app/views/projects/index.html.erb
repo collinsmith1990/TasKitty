@@ -1,15 +1,10 @@
 <div class="container">
 <div class="row">
-  <div class="col-2-4 project-list">
+  <div class="col-2-4">
     <h2>Projects</h2>
-    <% @projects.each do |project| %>
-      <div class="project">
-        <%= link_to project.title, project_path(project) %></span>
-        <%= link_to "delete", project, method: :delete,
-          data: { confirm: "You sure?" },
-          :class => "delete right" %>
-      </div>
-    <% end %>
+    <div class="project-list">
+      <%= render "projects/projects" %>
+    </div>
   </div>
   <div class="col-1-4">
     <%= render "projects/project_form" %>

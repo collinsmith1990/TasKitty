@@ -17,19 +17,22 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    @project.memberships.build(project_id: @project.id, user_id: current_user.id)
     if @project.save
-      flash[:success] = "New project created."
-      redirect_to projects_path
-    else
-      render 'new'
+      @membership = Membership.create(project_id: @project.id, user_id: current_user.id)
+    end
+    respond_to do |format|
+      format.html { redirect_to projects_path }
+      format.js
     end
   end
 
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
-    redirect_to root_url
+    respond_to do |format|
+      format.html { redirect_to projects_path}
+      format.js
+    end
   end
 
   private
